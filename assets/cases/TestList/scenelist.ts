@@ -1,4 +1,4 @@
-import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, GamepadCode, EventHandler, find, Vec3, UITransform, Layout, View } from "cc";
+import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, GamepadCode, EventHandler, find, Vec3, UITransform, Layout, View, sys } from "cc";
 import { FoldItem } from "./folditem";
 import { ItemType, ListItem } from "./listitem";
 const { ccclass, property } = _decorator;
@@ -199,7 +199,13 @@ export class SceneManager extends Component {
         const ls = gp.leftStick.getValue();
         const isUp = this.isControllerButtonPress(gp.dpad.up.getValue()) || ls.y > axisPrecision;
         const isDown = this.isControllerButtonPress(gp.dpad.down.getValue()) || (ls.y < -axisPrecision);
-        const isEnter = this.isControllerButtonPress(gp.buttonSouth.getValue());
+        // In NX platform, buttons of A and B are opposite
+        let isEnter = false;
+        if (sys.platform === sys.Platform.NX)
+            isEnter = this.isControllerButtonPress(gp.buttonEast.getValue());
+        else
+            isEnter = this.isControllerButtonPress(gp.buttonSouth.getValue());
+
         if (isEnter) {
             if (!this.isCurrentFocusNodeFold()) {
                 this.getCurrentFoucusNode().getComponent(ListItem)?.loadScene();

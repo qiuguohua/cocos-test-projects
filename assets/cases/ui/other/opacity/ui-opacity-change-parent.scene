@@ -452,7 +452,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 368.98685860339504,
+      "width": 460.20823688271605,
       "height": 63
     },
     "_anchorPoint": {
@@ -482,7 +482,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "UIOpacity改变parent",
+    "_string": "UiOpacity changes parent",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 50.625,
@@ -1482,7 +1482,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "向前",
+    "_string": "prev",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,
@@ -1998,7 +1998,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "向后",
+    "_string": "next",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,
@@ -2652,7 +2652,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "复位",
+    "_string": "reset",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,
@@ -2978,7 +2978,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "独立显示",
+    "_string": "separate",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,
@@ -3304,7 +3304,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "禁能",
+    "_string": "disable",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,
@@ -3575,7 +3575,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "Opacity计算方式  =  ",
+    "_string": "formulas = ",
     "_horizontalAlign": 2,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,
@@ -3707,7 +3707,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "Opacity计算值  = ",
+    "_string": "         = ",
     "_horizontalAlign": 2,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,
@@ -3839,7 +3839,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "Opacity计算结果  = ",
+    "_string": "result  = ",
     "_horizontalAlign": 2,
     "_verticalAlign": 1,
     "_actualFontSize": 25.3125,

@@ -452,7 +452,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 295.57619598765433,
+      "width": 251.16649787808643,
       "height": 63
     },
     "_anchorPoint": {
@@ -482,7 +482,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "UIOpacity测试例",
+    "_string": "UIOpacity test",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 50.625,
@@ -575,8 +575,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -253.868,
-      "y": 150.38,
+      "x": -238.066,
+      "y": 179.727,
       "z": 0
     },
     "_lrot": {
@@ -614,8 +614,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 334.14144483024694,
-      "height": 125.19999999999999
+      "width": 328.94181616512344,
+      "height": 65.2
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -644,11 +644,11 @@
       "b": 255,
       "a": 255
     },
-    "_string": "S表示：Sprite组件              U表示：UIOpacity组件\nUS表示:UIOpacity组件+Sprite组件\nN表示：只有node组件\n\n\n",
+    "_string": "S : Sprite                       U : UIOpacity\nUS : UIOpacity + Sprite \nN : node only",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
-    "_actualFontSize": 18.984375,
-    "_fontSize": 15,
+    "_actualFontSize": 25.3125,
+    "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 20,
     "_overflow": 0,

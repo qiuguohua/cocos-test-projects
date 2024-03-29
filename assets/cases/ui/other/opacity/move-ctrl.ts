@@ -177,9 +177,9 @@ export class MoveCtrl extends Component {
         }
         let label =  event.currentTarget.getComponentInChildren(Label);
         if(UiOp?.enabled) {
-            label!.string = '禁能'
+            label!.string = 'disable'
         } else {
-            label!.string = '使能'
+            label!.string = 'enable'
         }
         
         this.calcOpacity();

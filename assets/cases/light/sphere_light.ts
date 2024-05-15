@@ -12,7 +12,7 @@ export class typescript extends Component {
 
     start () {
         // Your initialization goes here.
-        this._nowP = this.node.position;
+        this._nowP = this.node.position.clone();
         this._startP = Math.asin((this._nowP.y - this._low) / (this._height - this._low));
     }
 

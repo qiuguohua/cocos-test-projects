@@ -27,7 +27,7 @@ export class VideoPlayerCtrl extends Component {
         switch (sys.platform) {
             case sys.MACOS:
             case sys.ALIPAY_MINI_GAME:
-            case sys.BYTEDANCE_MINI_GAME:
+            // case sys.BYTEDANCE_MINI_GAME:
             case sys.COCOSPLAY:
             case sys.HUAWEI_QUICK_GAME:
             case sys.VIVO_MINI_GAME:

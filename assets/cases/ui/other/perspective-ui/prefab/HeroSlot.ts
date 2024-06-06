@@ -28,19 +28,22 @@ export class HeroSlot extends Component {
     public spBorder: Sprite = null!;
     @property([Sprite])
     public spStars: Sprite[] = [];
-
+    
+    private static num: number = 0;
     // use this for initialization
     onLoad() {
         this.refresh();
+        HeroSlot.num++;
     }
 
     refresh() {
-        let bgIdx = getRandomInt(0, this.sfBorders.length);
-        let heroIdx = getRandomInt(0, this.sfHeroes.length);
-        let starIdx = getRandomInt(0, this.spStars.length);
-        let rankIdx = getRandomInt(0, this.sfRanks.length);
-        let attIdx = getRandomInt(0, this.sfAttributes.length);
-        let levelIdx = getRandomInt(0, 100);
+        let bgIdx = HeroSlot.num % this.sfBorders.length;
+        let heroIdx = HeroSlot.num % this.sfHeroes.length;
+        let starIdx = HeroSlot.num % this.spStars.length;
+        let rankIdx = HeroSlot.num % this.sfRanks.length;
+        let attIdx = HeroSlot.num % this.sfAttributes.length;
+        let levelIdx = HeroSlot.num % 100;
+
         this.labelLevel.string = 'LV.' + levelIdx;
         this.spRank.spriteFrame = this.sfRanks[rankIdx];
         this.refreshStars(starIdx);

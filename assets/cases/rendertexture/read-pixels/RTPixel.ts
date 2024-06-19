@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, RenderTexture, Texture2D, SpriteFrame, Sprite } from 'cc';
+import { _decorator, Component, Node, RenderTexture, Texture2D, SpriteFrame, Sprite, director } from 'cc';
 import { RTCapture } from './RTCapture';
 const { ccclass, property, menu } = _decorator;
 
@@ -41,7 +41,7 @@ export class RTPixel extends Component {
         this.dstTexture.reset({
             width: 256,
             height: 256,
-            format: Texture2D.PixelFormat.RGBA8888,
+            format: director.root!.device.swapchainFormat,
             mipmapLevel: 0
         });
     }

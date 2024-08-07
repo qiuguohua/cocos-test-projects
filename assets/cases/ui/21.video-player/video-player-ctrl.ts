@@ -51,9 +51,16 @@ export class VideoPlayerCtrl extends Component {
     }
 
     onPlaybackRate () {
-        this._playbackRate = this._playbackRate++ >= 3 ? 1 : this._playbackRate;
-        this.videoPlayer.playbackRate = this._playbackRate;
-        this.playbackRate.string = `x${this._playbackRate}`;
+        if(sys.platform !== sys.BYTEDANCE_MINI_GAME && sys.platform !== sys.WECHAT_GAME) {
+            this._playbackRate = this._playbackRate++ >= 3 ? 1 : this._playbackRate;
+            this.videoPlayer.playbackRate = this._playbackRate;
+            this.playbackRate.string = `x${this._playbackRate}`;
+        } else {
+            var playbackRates = [1.0, 1.25, 1.5, 0.5, 0.8];
+            this._playbackRate = ++this._playbackRate >= playbackRates.length ? 0 : this._playbackRate;
+            this.videoPlayer.playbackRate = playbackRates[this._playbackRate];
+            this.playbackRate.string = "x" + playbackRates[this._playbackRate];
+        }
     }
 
     onSlider (slider: Slider) {

@@ -56,6 +56,8 @@ export class VideoPlayerCtrl extends Component {
             this.videoPlayer.playbackRate = this._playbackRate;
             this.playbackRate.string = `x${this._playbackRate}`;
         } else {
+            // The rate at which the WeChat mini-game is played is fixed at a few values。
+            // https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.playbackRate.html
             var playbackRates = [1.0, 1.25, 1.5, 0.5, 0.8];
             this._playbackRate = ++this._playbackRate >= playbackRates.length ? 0 : this._playbackRate;
             this.videoPlayer.playbackRate = playbackRates[this._playbackRate];

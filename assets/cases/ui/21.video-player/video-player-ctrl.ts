@@ -65,7 +65,7 @@ export class VideoPlayerCtrl extends Component {
             playbackRates = [1.0, 2.0, 3.0];
         }
         this._playbackRate += 1;
-        this._playbackRate = (this._playbackRate >= playbackRates.length) ? 0 : this._playbackRate;
+        this._playbackRate = this._playbackRate % playbackRates.length;
         this.videoPlayer.playbackRate = playbackRates[this._playbackRate];
         this.playbackRate.string = `x${playbackRates[this._playbackRate]}`;
     }

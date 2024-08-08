@@ -58,8 +58,9 @@ export class VideoPlayerCtrl extends Component {
                 // https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.playbackRate.html
                 playbackRates = [1.0, 1.25, 1.5, 0.5, 0.8];
             } else if(sys.platform === sys.BYTEDANCE_MINI_GAME) {
-                // https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/media/video/video-context/video-context-playback-rate
-                playbackRates = [1.0, 1.25, 1.5, 0.75];
+                // https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/api/media/video/video
+                // Douyin mini-games do not yet support settings
+                playbackRates = [1.0];
             }
         } else {
             playbackRates = [1.0, 2.0, 3.0];

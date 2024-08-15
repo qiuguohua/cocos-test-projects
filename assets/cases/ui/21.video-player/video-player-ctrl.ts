@@ -20,7 +20,7 @@ export class VideoPlayerCtrl extends Component {
     @type(Label)
     public platform: Label = null!;
 
-    _playbackRate = 1;
+    _playbackRate = 0;
 
     start () {
         // 隐藏不支持 video player 的平台
@@ -51,9 +51,24 @@ export class VideoPlayerCtrl extends Component {
     }
 
     onPlaybackRate () {
-        this._playbackRate = this._playbackRate++ >= 3 ? 1 : this._playbackRate;
-        this.videoPlayer.playbackRate = this._playbackRate;
-        this.playbackRate.string = `x${this._playbackRate}`;
+        let playbackRates: number[] = [];
+        if(sys.platform === sys.BYTEDANCE_MINI_GAME || sys.platform === sys.WECHAT_GAME) {
+            // The rate at which the WeChat mini-game and douyin platform  is played is fixed at a few values。
+            if(sys.platform === sys.WECHAT_GAME) {
+                // https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.playbackRate.html
+                playbackRates = [1.0, 1.25, 1.5, 0.5, 0.8];
+            } else if(sys.platform === sys.BYTEDANCE_MINI_GAME) {
+                // https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/api/media/video/video
+                // Douyin mini-games do not yet support settings
+                playbackRates = [1.0];
+            }
+        } else {
+            playbackRates = [1.0, 2.0, 3.0];
+        }
+        this._playbackRate += 1;
+        this._playbackRate = this._playbackRate % playbackRates.length;
+        this.videoPlayer.playbackRate = playbackRates[this._playbackRate];
+        this.playbackRate.string = `x${playbackRates[this._playbackRate]}`;
     }
 
     onSlider (slider: Slider) {
